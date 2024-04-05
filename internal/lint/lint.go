@@ -24,6 +24,7 @@ type Config struct {
 	DisabledRules         []string
 	IgnoreCommentDisables bool
 	SetExitStatus         bool
+	AllowedFiles          []string
 }
 
 // Response describes the result returned by a rule.
