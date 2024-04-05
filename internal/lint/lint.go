@@ -23,6 +23,7 @@ type Config struct {
 	EnabledRules          []string
 	DisabledRules         []string
 	IgnoreCommentDisables bool
+	SetExitStatus         bool
 }
 
 // Response describes the result returned by a rule.

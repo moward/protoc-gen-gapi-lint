@@ -1,6 +1,8 @@
 package main
 
 import (
+	"errors"
+
 	"github.com/jhump/protoreflect/desc"
 	"github.com/protoc-extensions/protoc-gen-gapi-lint/internal/lint"
 	"github.com/protoc-extensions/protoc-gen-gapi-lint/internal/lint/format"
@@ -16,6 +18,7 @@ func NewFlagSet(config *lint.Config) *pflag.FlagSet {
 	args.StringArrayVar(&config.EnabledRules, "enable-rule", nil, "Enable a rule with the given name.\nMay be specified multiple times.")
 	args.StringArrayVar(&config.DisabledRules, "disable-rule", nil, "Disable a rule with the given name.\nMay be specified multiple times.")
 	args.BoolVar(&config.IgnoreCommentDisables, "ignore-comment-disables", false, "If set to true, disable comments will be ignored.\nThis is helpful when strict enforcement of AIPs are necessary and\nproto definitions should not be able to disable checks.")
+	args.BoolVar(&config.SetExitStatus, "set-exit-status", false, "If set to true, the exit status will be set to 1 if any linting errors are found.")
 	return args
 }
 
@@ -76,6 +79,10 @@ func main() {
 		// encode the collection
 		if err := encoder.Encode(collection); err != nil {
 			return err
+		}
+
+		if config.SetExitStatus && len(collection) > 0 {
+			return errors.New("linting errors found")
 		}
 
 		return nil
