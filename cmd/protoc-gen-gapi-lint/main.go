@@ -14,7 +14,7 @@ import (
 func NewFlagSet(config *lint.Config) *pflag.FlagSet {
 	args := pflag.NewFlagSet("protoc-gen-gapi-lint", pflag.ExitOnError)
 	args.StringVar(&config.Path, "config", "", "The linter config file.")
-	args.StringVar(&config.OutputFormat, "output-format", "", "The format of the linting results.\nSupported formats include \"yaml\", \"json\",\"github\" and \"summary\" table.\nYAML is the default.")
+	args.StringVar(&config.OutputFormat, "output-format", "", "The format of the linting results.\nSupported formats include \"yaml\", \"json\",\"github\",\"summary\" table, and \"pretty\".\nYAML is the default.")
 	args.StringVarP(&config.OutputPath, "output-path", "o", "", "The output file path.\nIf not given, the linting results will be printed out to STDOUT.")
 	args.StringArrayVar(&config.EnabledRules, "enable-rule", nil, "Enable a rule with the given name.\nMay be specified multiple times.")
 	args.StringArrayVar(&config.DisabledRules, "disable-rule", nil, "Disable a rule with the given name.\nMay be specified multiple times.")

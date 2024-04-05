@@ -20,6 +20,8 @@ func NewEncoder(writer io.Writer, format string) Encoder {
 		return yaml.NewEncoder(writer)
 	case "json":
 		return json.NewEncoder(writer)
+	case "pretty":
+		return NewPrettyEncoder(writer)
 	default:
 		return yaml.NewEncoder(writer)
 	}
