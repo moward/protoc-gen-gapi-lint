@@ -1,4 +1,4 @@
-module github.com/protoc-extensions/protoc-gen-gapi-lint
+module github.com/moward/protoc-gen-gapi-lint
 
 go 1.20
 

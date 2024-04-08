@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/protoc-extensions/protoc-gen-gapi-lint/internal/lint"
+	"github.com/moward/protoc-gen-gapi-lint/internal/lint"
 )
 
 // PrettyEncoder implements the Encoder interface for pretty printing lint responses.

@@ -19,10 +19,3 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-brews:
-  - tap:
-      owner: protoc-extensions
-      name: homebrew-tap
-    name: protoc-gen-gapi-lint
-    description: A gapi-linter plugin for protoc
-    homepage: https://github.com/protoc-extensions/protoc-gen-gapi-lint

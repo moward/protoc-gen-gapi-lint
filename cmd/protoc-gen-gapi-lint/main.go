@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/jhump/protoreflect/desc"
-	"github.com/protoc-extensions/protoc-gen-gapi-lint/internal/lint"
-	"github.com/protoc-extensions/protoc-gen-gapi-lint/internal/lint/format"
+	"github.com/moward/protoc-gen-gapi-lint/internal/lint"
+	"github.com/moward/protoc-gen-gapi-lint/internal/lint/format"
 	"github.com/spf13/pflag"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/types/pluginpb"
